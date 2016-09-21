@@ -7,8 +7,5 @@
 *.gcda
 *.gcno
 .vscode/
-wander.dSYM/Contents/Info.plist
-
-wander.dSYM/Contents/Resources/DWARF/wander
-
+wander.dSYM/
 wander
