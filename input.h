@@ -22,7 +22,7 @@ bool g_input[NUM_INPUT_COMMANDS] = {0};
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     //Immutable input keys:
-    bool is_pressed = (action == GLFW_PRESS);
+    bool is_pressed = (action != GLFW_RELEASE);
     switch(key){
         case GLFW_KEY_W:
         case GLFW_KEY_UP:       g_input[MOVE_UP]        = is_pressed; return;
