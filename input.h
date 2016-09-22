@@ -1,5 +1,4 @@
 #pragma once
-
 //Kevin's Input Layer using GLFW 
 
 //List of all possible commands in the game!

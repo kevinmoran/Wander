@@ -1,5 +1,4 @@
 #pragma once
-
 #include <GL/glew.h>
 #include "maths_funcs.h"
 

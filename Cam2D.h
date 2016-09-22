@@ -1,5 +1,4 @@
 #pragma once
-
 #include "maths_funcs.h"
 
 #define DEFAULT_SCREEN_WIDTH 1080.0f

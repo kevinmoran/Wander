@@ -1,5 +1,4 @@
 #pragma once
-
 #include "maths_funcs.h"
 
 #define NUM_PARTICLES 32
