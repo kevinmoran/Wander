@@ -805,7 +805,7 @@ inline mat4 scale(const mat4& m, const vec3& v) {
 	return a * m;
 }
 
-//scale a matrix uniformly
+//scale a matrix uniformly by s
 inline mat4 scale(const mat4& m, float s) {
 	mat4 a = identity_mat4();
 	a.m[0] = s;

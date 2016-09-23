@@ -7,5 +7,5 @@ bool screen_is_shaking = false;
 
 inline float screenshake(double shake_time, double duration, float A, float f){
 	double t = (duration-shake_time)/duration;
-	return A*sin(2*M_PI*f*t);
+	return A*t*sin(2*M_PI*f*t);
 }

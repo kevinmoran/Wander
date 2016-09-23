@@ -166,7 +166,7 @@ int main() {
 			screen_is_shaking = false;
 		}
 		if(screen_is_shaking){
-			float shake_val = screenshake(screenshake_timer, SCREENSHAKE_DURATION, 0.08f, 2);
+			float shake_val = screenshake(screenshake_timer, SCREENSHAKE_DURATION, 0.2f, 2);
 			camera.x += shake_val;
 			camera.set_view_matrix();
 			glUniformMatrix4fv(pass_shader.V_loc, 1, GL_FALSE, camera.V.m);
