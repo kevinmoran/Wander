@@ -1,0 +1,48 @@
+//GPU particle system brainstorm
+//Simulate closed-form particles
+//By just shunting data to GPU in one big buffer
+// http://learnopengl.com/#!Advanced-OpenGL/Instancing
+
+#pragma once
+#include <GL/glew.h>
+#include "maths_funcs.h"
+#include "Shader.h"
+
+//Gameplay code
+if(collision){
+    create_particles(pos);
+}
+
+//Will have to SOA this to send over individual attributes
+struct Particle{
+    vec2 vel;
+    vec2 pos;
+    vec3 colour; //We'll generate alpha from lifetime anyway, and this gives sizeof(Particle) = 8
+    float lifetime;
+    //vec4 colour; //OR send over a vec4 colour with alpha as lifetime (sneaky!)
+}
+
+//Num particles in each poof or boom
+#define NUM_PARTICLES_IN_EFFECT 32
+//Num poofs or booms can we have at once
+#define MAX_NUM_PARTICLE_EFFECTS 16
+//How much GPU mem to reserve for poofs and booms
+#define PARTICLE_BUFFER_SIZE need to rethink this!
+
+GLuint particle_data_vao;
+Shader particle_shader;
+unsigned int num_live_effects;
+float effect_timers[MAX_NUM_PARTICLE_EFFECTS];
+
+void init_particle_system(){
+
+}
+
+
+void create_particles(vec2 origin){
+    //add some particles to the system eminating from origin
+}
+
+void render_particles{
+
+}
