@@ -1,14 +1,17 @@
 #pragma once
-#include <GL/glew.h>
+//#include <GL/glew.h>
 #include "maths_funcs.h"
 
+//This should definitely be SOA
+//vel and pos are iterated over for update
+//M and colour for render
 struct Entity {
-	float x, y, z;
-	float width, height;
-	vec4 colour;
-	float angle;
 	vec2 vel;
+	float x, y, z;
 	mat4 M;
+	vec4 colour;
+	float width, height;
+	float angle;
 
 	Entity();
 	void set_model_matrix();
