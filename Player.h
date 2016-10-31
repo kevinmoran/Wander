@@ -23,6 +23,7 @@ bool player_is_moving = false;
 extern float gl_aspect_ratio;
 
 void update_player(double dt){
+    player_is_moving = false;
     if (g_input[MOVE_UP]) {
         player.vel.v[1] += player_acc*dt;
         player_is_moving = true;
