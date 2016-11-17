@@ -46,8 +46,8 @@ int main() {
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, NULL);
 
 	//Load shader
-	Shader pass_shader("pass.vert", "pass.frag");
-	GLuint colour_loc = glGetUniformLocation(pass_shader.prog_id, "quad_colour");
+	Shader pass_shader = load_shader("pass.vert", "pass.frag");
+	GLuint colour_loc = glGetUniformLocation(pass_shader.id, "quad_colour");
 
 	//Setup objects in scene
 	const int NUM_BLOCKS = 2;
@@ -79,7 +79,7 @@ int main() {
 
 	//Camera setup
 	Cam2D camera(0, 0, gl_aspect_ratio);
-	glUseProgram(pass_shader.prog_id);
+	glUseProgram(pass_shader.id);
 	glUniformMatrix4fv(pass_shader.V_loc, 1, GL_FALSE, camera.V.m);
 	glUniformMatrix4fv(pass_shader.P_loc, 1, GL_FALSE, camera.P.m);
 
@@ -186,7 +186,7 @@ int main() {
 		//Rendering
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glUseProgram(pass_shader.prog_id);
+		glUseProgram(pass_shader.id);
 		glBindVertexArray(quad_vao);
 
 		//Draw player
